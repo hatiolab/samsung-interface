@@ -2,7 +2,7 @@ import 'url-polyfill'
 import 'url-search-params-polyfill'
 import { SceneIntegrator } from '@things-scene/things-board-integration'
 
-export function init({ baseURL = 'http://board-demo.hatiolab.com/rest', queryString, authorizationKey, license = '' }) {
+export function init({ baseURL, queryString, license = '' }) {
   var fit = 'both' // 'both', 'ratio', 'center', 'none'
 
   var searchParams
@@ -14,9 +14,6 @@ export function init({ baseURL = 'http://board-demo.hatiolab.com/rest', queryStr
   searchParams = new URLSearchParams(queryString)
 
   var sceneName = searchParams.get('scene')
-  var token = searchParams.get('token')
-
-  authorizationKey = token || authorizationKey
 
   if (!sceneName) {
     return alert('Scene name이 필요합니다.')
