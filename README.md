@@ -1,1 +1,1 @@
-# cj-mcc-wcs-interface
+# freshway-interface
