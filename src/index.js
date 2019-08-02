@@ -1,3 +1,5 @@
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
 import 'url-polyfill'
 import 'url-search-params-polyfill'
 import { SceneIntegrator } from '@things-scene/things-board-integration'
@@ -29,6 +31,11 @@ export function init({ baseURL, queryString, license = '' }) {
 
   integrator.integrate({
     target: 'scene-viewer',
-    sceneName: sceneName
+    sceneName: sceneName,
+    callback: board => {
+      window.board = board
+
+      board.root.invalidate()
+    }
   })
 }
