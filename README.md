@@ -1,1 +1,1 @@
-# freshway-interface
+# samsung-interface
