@@ -1,50 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <style>
-      body,
-      html {
-        width: 100%;
-        height: 100%;
-        border: none;
-        margin: 0;
-      }
 
-      .scene-viewer {
-        width: 100%;
-        height: 100%;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      border: none;
+      margin: 0;
+    }
 
-  <body>
-    <div id="scene-viewer" class="scene-viewer"></div>
+    .scene-viewer {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
 
-    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-    <script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+<body>
+  <div id="scene-viewer" class="scene-viewer"></div>
 
-    <script src="node_modules/webfontloader/webfontloader.js"></script>
-    <script src="node_modules/sockjs-client/dist/sockjs.min.js"></script>
-    <script src="node_modules/stomp-websocket/lib/stomp.min.js"></script>
+  <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+  <script src="/node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
 
-    <script src="node_modules/@hatiolab/things-scene/things-scene-ie.js"></script>
-    <script src="node_modules/@things-scene/things-board-integration/things-board-integration-min.js"></script>
-    <script src="node_modules/@things-shell/board-bundler/dist/board-bundle.js"></script>
+  <script src="node_modules/webfontloader/webfontloader.js"></script>
+  <script src="node_modules/sockjs-client/dist/sockjs.min.js"></script>
+  <script src="node_modules/stomp-websocket/lib/stomp.min.js"></script>
 
-    <script src="./dist/main.js"></script>
-    <script src="./licenses/things-lic.js"></script>
+  <script src="node_modules/@hatiolab/things-scene/things-scene-ie.js"></script>
+  <script src="node_modules/@things-scene/things-board-integration/things-board-integration-min.js"></script>
+  <script src="node_modules/@things-shell/board-bundler/dist/board-bundle.js"></script>
 
-    <script>
-      var ThingsLicense = window.ThingsLicense || ''
-      init({
-        baseURL: 'http://board-demo.hatiolab.com/rest',
-        queryString: location.search,
-        license: ThingsLicense
-      })
-    </script>
-  </body>
+  <script src="./dist/main.js"></script>
+  <script src="./licenses/things-lic.js"></script>
+
+  <script>
+    var ThingsLicense = window.ThingsLicense || ''
+    init({
+      authorizationKey: "",
+      withCredentials: true,
+      baseURL: 'https://deadpool.hatiolab.com/rest',
+      queryString: location.search,
+      license: ThingsLicense
+    })
+  </script>
+</body>
+
 </html>
